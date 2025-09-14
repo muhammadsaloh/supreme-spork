@@ -8,17 +8,31 @@ export const Wrapper = styled.div`
   border-radius: 8px;
   padding: 18px;
   box-shadow: 0 0 0 1px #f0f0f0 inset;
+
+  @media (max-width: 600px) {
+    padding: 12px;
+  }
 `;
 
 export const ColumnsRow = styled.div`
   display: flex;
   gap: 20px;
   position: relative;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const Col = styled.div`
   flex: 1;
   min-width: 240px;
+
+  @media (max-width: 768px) {
+    width: 100%; /* take full width on mobile */
+    min-width: unset;
+  }
 `;
 
 export const ItemBox = styled.div<{ active?: boolean }>`
@@ -33,6 +47,7 @@ export const ItemBox = styled.div<{ active?: boolean }>`
   align-items: center;
   justify-content: space-between;
   cursor: grab;
+  word-break: break-word;
 `;
 
 export const Anchor = styled.div<{ visible?: boolean }>`
@@ -47,6 +62,7 @@ export const Anchor = styled.div<{ visible?: boolean }>`
 
 export const Controls = styled.div`
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 8px;
 `;
